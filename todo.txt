@@ -1,0 +1,6 @@
+1. app theming
+    a. icons
+    b. exit to tray
+    c. change window name when playing
+2. hook media keys
+3. media service
