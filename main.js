@@ -8,14 +8,23 @@ let isPlaying
 let tray = null
 
 const trayMenu = [
-    {label: 'Play/Pause', click: () => {
-        window.webContents.executeJavaScript('document.getElementById("play-pause-button").click()')
-    }},
+    {label: 'Controls',
+    submenu: [
+        {label: 'Previous', click: () => {
+            window.webContents.executeJavaScript('document.querySelector(\'.previous-button\').click()')
+        }},
+        {label: 'Play/Pause', click: () => {
+            window.webContents.executeJavaScript('document.querySelector(\'.play-pause-button\').click()')
+        }},
+        {label: 'Next', click: () => {
+            window.webContents.executeJavaScript('document.querySelector(\'.next-button\').click()')
+        }}
+    ]},
     {label: 'Exit', click: () => {
         isQuitting = true
         tray.destroy()
         app.quit()
-    }},
+    }}
 ]
 
 function createWindow() {
@@ -47,11 +56,9 @@ function createWindow() {
 
     mainWindowState.manage(window)
 
-    window.setMenu(null)
+    //window.setMenu(null)
 
     window.loadURL('https://music.youtube.com')
-
-    window.webContents.openDevTools()
 
     window.on('closed', () => {
         window = null
