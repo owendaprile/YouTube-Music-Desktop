@@ -1,4 +1,4 @@
-const {app, BrowserWindow, Menu, Tray} = require('electron')
+const {app, BrowserWindow, Menu, Tray, globalShortcut} = require('electron')
 const windowStateKeeper = require('electron-window-state')
 var path = require('path')
 
@@ -8,18 +8,24 @@ let isPlaying
 let tray = null
 
 const trayMenu = [
-    {label: 'Controls',
-    submenu: [
-        {label: 'Previous', click: () => {
-            window.webContents.executeJavaScript('document.querySelector(\'.previous-button\').click()')
-        }},
-        {label: 'Play/Pause', click: () => {
-            window.webContents.executeJavaScript('document.querySelector(\'.play-pause-button\').click()')
-        }},
-        {label: 'Next', click: () => {
-            window.webContents.executeJavaScript('document.querySelector(\'.next-button\').click()')
-        }}
-    ]},
+    {label: 'Controls', enabled: false},
+
+    {label: 'Previous', click: () => {
+        window.webContents.executeJavaScript('document.querySelector(\'.previous-button\').click()')
+    }},
+    {label: 'Play/Pause', click: () => {
+        window.webContents.executeJavaScript('document.querySelector(\'.play-pause-button\').click()')
+    }},
+    {label: 'Next', click: () => {
+        window.webContents.executeJavaScript('document.querySelector(\'.next-button\').click()')
+    }},
+    {label: 'Like', click: () => {
+        window.webContents.executeJavaScript('document.querySelector(\'ytmusic-player-bar .like\').click()')
+    }},
+    {label: 'Dislike', click: () => {
+        window.webContents.executeJavaScript('document.querySelector(\'ytmusic-player-bar .dislike\').click()');
+    }},
+    {type: 'separator'},
     {label: 'Exit', click: () => {
         isQuitting = true
         tray.destroy()
@@ -56,9 +62,21 @@ function createWindow() {
 
     mainWindowState.manage(window)
 
-    //window.setMenu(null)
+    window.setMenu(null)
 
     window.loadURL('https://music.youtube.com')
+
+    globalShortcut.register('MediaPreviousTrack', () => {
+        window.webContents.executeJavaScript('document.querySelector(\'.previous-button\').click()')
+    })
+
+    globalShortcut.register('MediaPlayPause', () => {
+        window.webContents.executeJavaScript('document.querySelector(\'.play-pause-button\').click()')
+    })
+
+    globalShortcut.register('MediaNextTrack', () => {
+        window.webContents.executeJavaScript('document.querySelector(\'.next-button\').click()')
+    })
 
     window.on('closed', () => {
         window = null
