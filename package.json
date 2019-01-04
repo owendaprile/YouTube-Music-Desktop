@@ -9,5 +9,8 @@
   "author": "Owen D'Aprile",
   "dependencies": {
     "electron-window-state": "^5.0.3"
+  },
+  "devDependencies": {
+    "electron-builder": "^20.38.4"
   }
 }
