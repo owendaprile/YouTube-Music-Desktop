@@ -2,10 +2,12 @@ const {app, BrowserWindow, Menu, Tray, globalShortcut} = require('electron')
 const windowStateKeeper = require('electron-window-state')
 var path = require('path')
 
-let window
+let window = null
 let isQuitting
 let isPlaying
 let tray = null
+
+const hasSingleInstanceLock = app.requestSingleInstanceLock()
 
 const trayMenu = [
     {label: 'Controls', enabled: false},
@@ -90,7 +92,19 @@ function createWindow() {
     })
 }
 
-app.on('ready', createWindow)
+if(!hasSingleInstanceLock) {
+    isQuitting = true
+    app.quit()
+} else {
+    app.on('second-instance', (event, commandLine, workingDirectory) => {
+        if(window) {
+            window.restore()
+            window.show()
+            window.focus()
+        }
+    })
+    app.on('ready', createWindow)
+}
 
 app.on('window-all-closed', () => {
     if(process.platform !== 'darwin') {

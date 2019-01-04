@@ -1,12 +1,26 @@
 {
   "name": "youtube-music-desktop",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "license": "GNU General Public License v3.0",
   "description": "Desktop player for Youtube Music",
+  "homepage": "https://github.com/owendaprile/Youtube-Music-Desktop",
   "main": "main.js",
   "scripts": {
+    "pack": "build --dir",
+    "dist": "build",
+    "postinstall": "install-app-deps",
     "start": "electron ."
   },
   "author": "Owen D'Aprile",
+  "build": {
+    "appId": "me.teddyfrozevelt.youtubemusicdesktop",
+    "productName": "YouTube Music Desktop",
+    "win": {
+      "target": "NSIS",
+      "icon": "assets\\icons\\win\\576x576.ico"
+
+    }
+  },
   "dependencies": {
     "electron-window-state": "^5.0.3"
   },
