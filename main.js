@@ -98,8 +98,12 @@ if(!hasSingleInstanceLock) {
 } else {
     app.on('second-instance', (event, commandLine, workingDirectory) => {
         if(window) {
-            window.restore()
-            window.show()
+            if(!window.isVisible()) {
+                window.show()
+            }
+            if(window.isMinimized()) {
+                window.restore()
+            }
             window.focus()
         }
     })
