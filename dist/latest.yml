@@ -1,8 +1,8 @@
-version: 0.0.1
+version: 0.1.0
 files:
-  - url: youtube-music-desktop-setup-0.0.1.exe
-    sha512: NHal39R/TI05XatgFgJ4lLmFx9wPQhTCwAzy7VDG20CMnNVyudeRzg3OcIBlX7vNjGdglLHaxygAu4P1vTcxsQ==
-    size: 43506502
-path: youtube-music-desktop-setup-0.0.1.exe
-sha512: NHal39R/TI05XatgFgJ4lLmFx9wPQhTCwAzy7VDG20CMnNVyudeRzg3OcIBlX7vNjGdglLHaxygAu4P1vTcxsQ==
-releaseDate: '2019-01-04T04:56:29.710Z'
+  - url: youtube-music-desktop-setup-0.1.0.exe
+    sha512: HcWkzjAYKkbs4eyH1Q3UxZNHcVw5kj7kd7N23y2vkRi6FdXDMtK3efV1SUff8Dcz9wZPlQujm4dugecmMzEtwQ==
+    size: 43506697
+path: youtube-music-desktop-setup-0.1.0.exe
+sha512: HcWkzjAYKkbs4eyH1Q3UxZNHcVw5kj7kd7N23y2vkRi6FdXDMtK3efV1SUff8Dcz9wZPlQujm4dugecmMzEtwQ==
+releaseDate: '2019-01-04T05:01:44.564Z'
