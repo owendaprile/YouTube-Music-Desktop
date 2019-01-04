@@ -1,6 +1,6 @@
 {
   "name": "youtube-music-desktop",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "GNU General Public License v3.0",
   "description": "Desktop player for Youtube Music",
   "homepage": "https://github.com/owendaprile/Youtube-Music-Desktop",
@@ -18,13 +18,13 @@
     "win": {
       "target": "NSIS",
       "icon": "assets\\icons\\win\\576x576.ico"
-
     }
   },
   "dependencies": {
     "electron-window-state": "^5.0.3"
   },
   "devDependencies": {
+    "electron": "^4.0.0",
     "electron-builder": "^20.38.4"
   }
 }
