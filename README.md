@@ -5,3 +5,7 @@ This is a simple desktop player for YouTube Music. It is a very simple electron 
 
 ### Installation
 Go to [releases](https://github.com/owendaprile/Youtube-Music-Desktop/releases) and download the most recent installer and run it.
+
+
+
+This project is not affiliated with Google. YouTube, YouTube Music, and other respective trademarks belong to Google.
