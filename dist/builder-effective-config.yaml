@@ -1,9 +1,0 @@
-directories:
-  output: dist
-  buildResources: build
-appId: me.teddyfrozevelt.youtubemusicdesktop
-productName: YouTube Music Desktop
-win:
-  target: NSIS
-  icon: assets\icons\win\576x576.ico
-electronVersion: 4.0.0

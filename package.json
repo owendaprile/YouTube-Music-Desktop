@@ -4,7 +4,7 @@
   "license": "GNU General Public License v3.0",
   "description": "Desktop player for Youtube Music",
   "homepage": "https://github.com/owendaprile/Youtube-Music-Desktop",
-  "main": "main.js",
+  "main": "src/main/main.js",
   "scripts": {
     "pack": "build --dir",
     "dist": "build",
