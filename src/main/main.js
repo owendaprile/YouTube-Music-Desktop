@@ -46,11 +46,11 @@ function createWindow() {
         'y': mainWindowState.y,
         'width': mainWindowState.width,
         'height': mainWindowState.height,
-        'icon': path.join(__dirname, 'assets/icons/win/96x96.ico'),
+        'icon': path.join(__dirname, '\\..\\assets\\icons\\win\\96x96.ico'),
         'title': 'YouTube Music'
     })
 
-    tray = new Tray(path.join(__dirname, 'assets/icons/win/32x32.ico'))
+    tray = new Tray(path.join(__dirname, '\\..\\assets\\icons\\win\\32x32.ico'))
     const contextMenu = Menu.buildFromTemplate(trayMenu)
 
     tray.setToolTip('YouTube Music')

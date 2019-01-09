@@ -17,7 +17,7 @@
     "productName": "YouTube Music Desktop",
     "win": {
       "target": "NSIS",
-      "icon": "assets\\icons\\win\\576x576.ico"
+      "icon": "src\\assets\\icons\\win\\576x576.ico"
     }
   },
   "dependencies": {
